@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-const App = () => {
+interface GlobalProps {}
+
+const GlobalStyle = createGlobalStyle<GlobalProps>`
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Righteous', cursive;
+  }
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>Hello Sliceline</h1>
+      <GlobalStyle />
+      <div>Hello Sliceline</div>
+    </>
   );
-}
+};
 
 export default App;
